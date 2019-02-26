@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
-import com.exo.testHiberante.entity.Student;
+import com.exo.testHiberante.entity.User;
 
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
@@ -27,7 +27,7 @@ public class HibernateUtil {
 
                 settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
 
-                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/hibernate_db?useSSL=false");
+                settings.put(Environment.URL, "jdbc:mysql://localhost:3306/leoni_db?useSSL=false");
 
                 settings.put(Environment.USER, "root");
 
@@ -39,11 +39,12 @@ public class HibernateUtil {
 
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+                settings.put(Environment.HBM2DDL_AUTO, "update");
 
                 configuration.setProperties(settings);
 
-                configuration.addAnnotatedClass(Student.class);
+               // configuration.addAnnotatedClass(Student.class);
+                configuration.addAnnotatedClass(User.class);
 
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 
