@@ -6,6 +6,7 @@ import com.exo.testHiberante.dao.StudentDao;
 import com.exo.testHiberante.dao.UserDao;
 import com.exo.testHiberante.entity.Student;
 import com.exo.testHiberante.entity.User;
+import com.exo.testHiberante.services.TimerService;
 
 /**
  * Hello world!
@@ -24,17 +25,19 @@ public class App
             List < Student > students = studentDao.getStudents();
 
             students.forEach(s -> System.out.println(s.getFirstName()));*/
-      UserDao userDao = new UserDao();
+     // UserDao userDao = new UserDao();
       /*User user = new User();
       user.setLogin("admin");
       user.setPassword("admin123");
      
       userDao.saveUser(user);*/
       
-      User user1 = userDao.getUserByLoginAndPassword("admin", "admin123");
+    /*  User user1 = userDao.getUserByLoginAndPassword("admin", "admin123");
       System.out.println("user1 :"+user1.getId());
       user1.setEmail("admin@leoni.tn");
-      userDao.updateUser(user1);
+      userDao.updateUser(user1);*/
+      
+      TimerService.executeTask();
 
         
     }
