@@ -1,5 +1,7 @@
 package com.exo.testHiberante.services;
 
+import java.util.List;
+
 import com.exo.testHiberante.dao.UserDao;
 import com.exo.testHiberante.entity.User;
 
@@ -18,5 +20,10 @@ public class UserService {
     } else {
       return false;
     }
+  }
+  
+  public List<User> getAllUsers()
+  {
+    return userDao.getAllUsers();
   }
 }
