@@ -14,11 +14,13 @@ public class ShowIP {
   {    
       
      // checkHosts("192.168.3");
-      long start = host2long("192.168.1.164");
+      
+    /*long start = host2long("192.168.1.164");
       long end = host2long("192.168.1.172");
       for (long i=start; i<=end; i++) {
           System.out.println(long2dotted(i));
-      }
+      }*/
+    checkHosts("192.168.3.15" , "192.168.3.100");
   }
   
   public static void checkHosts(String subnet) throws UnknownHostException, IOException{
@@ -33,9 +35,9 @@ public class ShowIP {
   
   public static void checkHosts(String address1 , String address2) throws UnknownHostException, IOException{
     int timeout=1000;
-    String [] arrOfaddress1  = address1 .split("."); 
-    String [] arrOfaddress2  = address2 .split("."); 
-    
+    String [] arrOfaddress1  = address1.split("\\."); 
+    String [] arrOfaddress2  = address2.split("\\."); 
+    System.out.println("length   "+arrOfaddress1.length);
     Integer lastNumberOfAddress1= Integer.parseInt(arrOfaddress1[3]);
     Integer lastNumberOfAddress2= Integer.parseInt(arrOfaddress2[3]);
     
