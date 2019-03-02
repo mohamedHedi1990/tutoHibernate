@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-
+//commentaire
 @Table(name = "leoni_user")
 public class User {
   @Id
